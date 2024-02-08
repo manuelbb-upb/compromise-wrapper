@@ -4,6 +4,7 @@ version = "0.0.1"
 description = ""
 authors = ["Manuel Berkemeier <manuelbb@mail.uni-paderborn.de>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
