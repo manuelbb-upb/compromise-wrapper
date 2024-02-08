@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "compromise_wrapper"
+version = "0.0.1"
+description = ""
+authors = ["Manuel Berkemeier <manuelbb@mail.uni-paderborn.de>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+juliacall = "^0.9.15"
+juliapkg = "^0.1.10"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+compromise-wrapper = "compromise_wrapper:main"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.21.0"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+numpy = "^1.26.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
