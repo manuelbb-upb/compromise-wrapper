@@ -11,7 +11,7 @@ class Simulation():
             sum( (x + self.params1)**2 ),
             sum( (x + self.params2)**2 )
         ])
-        print(f"Evaluating fitness for {x} gives:{y}")
+        #print(f"Evaluating fitness for {x} gives:{y}")
         return y
 
 
@@ -20,3 +20,7 @@ if __name__ == "__main__":
     sim = Simulation()
     mop = cw.MOP(2, lb=[-1.0, -1.0], ub=[2.0, 2.0])
     mop.set_vec_objective(sim.evaluate_fitness, dim_out=2)
+    mop.optimize([-1, 1.5])
+
+    #X0 = np.random.rand(2, 10)
+    #mop.optimize_parallel(X0)

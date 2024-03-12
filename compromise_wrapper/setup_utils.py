@@ -27,12 +27,21 @@ def install_juliapkgs(project_path=None, dev=False, offline=False, Compromise_pa
             Compromise_added = True
 
     if not Compromise_added:
-        juliapkg.add(
-            "Compromise",
-            uuid="254bc946-86ae-484f-a9da-8147cb79ba93",
-            dev=dev,
-            url="https://github.com/manuelbb-upb/Compromise.jl.git"
-        )
+        if dev:
+            juliapkg.add(
+                "Compromise",
+                uuid="254bc946-86ae-484f-a9da-8147cb79ba93",
+                dev=dev,
+                url="https://github.com/manuelbb-upb/Compromise.jl.git",
+            )
+        else:
+            juliapkg.add(
+                "Compromise",
+                uuid="254bc946-86ae-484f-a9da-8147cb79ba93",
+                dev=dev,
+                url="https://github.com/manuelbb-upb/Compromise.jl.git",
+                rev="b60f5a1dbbdd1d76c19ce358c72171a16d25ebc8"
+            )
 
     juliapkg.resolve()
 
