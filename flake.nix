@@ -18,7 +18,8 @@
         inherit (poetry2nix.lib.mkPoetry2Nix { inherit pkgs; }) mkPoetryApplication defaultPoetryOverrides mkPoetryEnv;
 
         python = pkgs.python310;
-        projectDir = ./.;
+        #projectDir = ./.;
+        projectDir = "${builtins.getEnv "HOME"}/Coding/compromise_wrapper";
         overrides = defaultPoetryOverrides.extend
           (self: super: {
             juliacall = super.juliacall.overridePythonAttrs

@@ -15,6 +15,9 @@ def install_juliapkgs(project_path=None, dev=False, offline=False, Compromise_pa
     juliapkg.require_julia("1.9")
     if dev:
        juliapkg.add("Revise", "295af30f-e4ad-537b-8983-00126c2a3abe")
+
+    juliapkg.add("Accessors", "7d9f7c33-5ae7-4f3b-8dc6-eff91059b697")
+
     Compromise_added = False
     if Compromise_path:
         if os.path.isdir(Compromise_path):
@@ -40,7 +43,7 @@ def install_juliapkgs(project_path=None, dev=False, offline=False, Compromise_pa
                 uuid="254bc946-86ae-484f-a9da-8147cb79ba93",
                 dev=dev,
                 url="https://github.com/manuelbb-upb/Compromise.jl.git",
-                rev="b60f5a1dbbdd1d76c19ce358c72171a16d25ebc8"
+                rev="613cfb1774ae78c78b32c2a847fae8db0df51b50"
             )
 
     juliapkg.resolve()

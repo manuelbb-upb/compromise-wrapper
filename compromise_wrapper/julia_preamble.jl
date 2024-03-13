@@ -17,3 +17,9 @@ function (pf::PyFunction)(y, x)
     pf.func(y, x)
     return Nothing
 end
+
+import Accessors: @set
+function change_max_func_calls(mop, i)
+    mop_new = @set mop.objectives.wrapped_function.max_func_calls=i
+    return mop_new
+end
